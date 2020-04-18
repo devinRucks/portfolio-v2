@@ -1,0 +1,56 @@
+@import '../styling/variables';
+
+#navbar-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     background: $dark-gray;
+     height: 100%;
+     width: 70px;
+     border-right: 1px #fff solid;
+
+     .icon {
+          cursor: pointer;
+     }
+
+     #home-nav {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          background: $background-color;
+          height: 55px;
+          width: 100%;
+     }
+
+     // #project-nav {
+     // }
+
+     #extra-links-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          height: 220px;
+          width: 90%;
+          // border: 1px red solid;
+
+
+          // #github-nav {
+
+          // }
+
+          // #resume-nav {
+
+          // }
+
+          // #contact-nav {
+
+          // }
+
+          // #linkedin-nav {
+
+          // }
+     }
+}

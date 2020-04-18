@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import RINGS from 'vanta/dist/vanta.rings.min'
 import * as THREE from 'three'
-import './homeContent.scss'
+import '../styling/home.scss'
 
-const HomeContent = (props) => {
+const Home = (props) => {
 	const [vantaEffect, setVantaEffect] = useState(0)
 	const myRef = useRef(null)
 
@@ -27,4 +27,4 @@ const HomeContent = (props) => {
 	)
 }
 
-export default HomeContent
+export default Home

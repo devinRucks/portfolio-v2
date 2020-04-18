@@ -1,5 +1,5 @@
 import React from 'react'
-import './project.scss'
+import '../styling/project.scss'
 
 const Project = (props) => {
 
