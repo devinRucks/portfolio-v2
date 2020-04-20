@@ -26,7 +26,7 @@ const Navbar = (props) => {
      return (
           <div id="navbar-container">
                <section
-                    id="home-nav"
+                    id="home-nav" ç
                     className="icon"
                     onClick={() => handleClick('home')}
                >
