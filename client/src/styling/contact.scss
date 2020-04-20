@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+@import '../styling/variables';
+
+
+
+#contact-section {
+     // font-family: 'Mukta', sans-serif;
+     font-family: 'Josefin Sans', sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     width: 45%;
+
+     #contact-container {
+          // border: 1px red solid;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 55%;
+          width: 75%;
+
+          .contact-title {
+               padding-top: 10px;
+               font-size: 60px;
+               color: $aqua;
+          }
+
+          #form-container {
+               // border: 1px green solid;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+               height: 80%;
+
+               #name-email-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    // border: 1px red solid;
+
+                    .name { width: 48%; }
+
+                    .email { width: 48%; }
+               }
+
+               .subject { width: 100%; }
+
+               input, textarea {
+                    outline: none;
+                    color: #555;
+                    background: $light-gray;
+                    border: none;
+                    margin-top: 8px;
+                    padding: 10px;
+                    font-size: 15px;
+                    height: 50px;
+
+                    &::placeholder {
+                         color: #444
+                    }
+               }
+
+               .message {
+                    height: 50%;
+                    width: 100%;
+               }
+
+               .form-submit {
+                    font-family: 'Josefin Sans', sans-serif;
+                    outline: none;
+                    cursor: pointer;
+                    background: $dark-gray;
+                    margin-top: 10px;
+                    padding-top: 2px;
+                    height: 30px;
+                    width: 60px;
+                    color: $aqua;
+                    border: 1px $aqua solid;
+                    border-radius: 5px;
+               }
+
+               
+          }
+
+          .contact-enter {
+               opacity: 0;
+               transform: translateY(-60%);
+               -webkit-transform: translateY(-60%);
+          }
+
+          @keyframes slide-in {
+               100% { transform: translateY(0%); }
+          }
+               
+          @-webkit-keyframes slide-in {
+               100% { -webkit-transform: translateY(0%); }
+          }
+
+          .contact-enter-active {
+               opacity: 1;
+               animation: slide-in 1.5s forwards;
+               -webkit-animation: slide-in 1.5s forwards;
+               transition: all 1.5s ease-in;
+          }
+
+          .contact-exit {
+
+          }
+
+          .contact-exit-active {
+
+          }
+     }
+          
+}
+
+#empty-section {
+     position: absolute;
+     top: 0;
+     right: 0;
+     height: 100vh;
+     width: 55%;
+     background: $empty-background-color;
+}

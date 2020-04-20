@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
 @import '../styling/variables';
 
 #navbar-container {
@@ -5,13 +6,30 @@
      flex-direction: column;
      justify-content: space-between;
      align-items: center;
+     position: fixed;
+     z-index: 1000;
      background: $dark-gray;
      height: 100%;
-     width: 70px;
+     width: 60px;
      border-right: 1px #fff solid;
 
+     .link {
+          text-decoration: none;
+     }
+
      .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           cursor: pointer;
+          height: 45px;
+          width: 45px;
+     }
+
+     .icon-text {
+          font-family: 'Overpass Mono', monospace;
+          color: #08fdd8;
+          font-size: 9px;
      }
 
      #home-nav {
@@ -19,12 +37,12 @@
           flex-direction: column;
           align-items: center;
           justify-content: space-evenly;
-          background: $background-color;
+          background: black;
           height: 55px;
           width: 100%;
      }
 
-     // #project-nav {
+     // #projects-nav {
      // }
 
      #extra-links-container {

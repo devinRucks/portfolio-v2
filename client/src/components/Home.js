@@ -13,7 +13,7 @@ const Home = (props) => {
 				el: myRef.current,
 				scale: 1,
 				color: '#08fdd8',
-				backgroundColor: '#222222',
+				backgroundColor: '#181818',
 				THREE: THREE // use a custom THREE when initializing
 			}))
 		}
