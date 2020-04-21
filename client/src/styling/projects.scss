@@ -32,4 +32,25 @@
                margin-left: 20px;
           }
      }
+
+     .projects-enter {
+          opacity: 0;
+          transform: translateY(-20%);
+          -webkit-transform: translateY(-20%);
+     }
+
+     @keyframes slide-in {
+          100% { transform: translateY(0%); }
+     }
+          
+     @-webkit-keyframes slide-in {
+          100% { -webkit-transform: translateY(0%); }
+     }
+
+     .projects-enter-active {
+          opacity: 1;
+          animation: slide-in 1s forwards;
+          -webkit-animation: slide-in 1s forwards;
+          transition: all 1s ease-in;
+     }
 }

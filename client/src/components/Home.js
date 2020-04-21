@@ -1,11 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react'
 import RINGS from 'vanta/dist/vanta.rings.min'
+import { CSSTransition } from "react-transition-group";
 import * as THREE from 'three'
 import '../styling/home.scss'
 
 const Home = (props) => {
 	const [vantaEffect, setVantaEffect] = useState(0)
+	const [mounted, setMount] = useState(false)
 	const myRef = useRef(null)
+
+	useEffect(() => {
+		setMount(true)
+	}, [mounted])
 
 	useEffect(() => {
 		if (!vantaEffect) {
@@ -23,7 +29,9 @@ const Home = (props) => {
 	}, [vantaEffect])
 
 	return (
-		<div ref={myRef} id="foreground-content"></div>
+		<CSSTransition in={mounted} timeout={1200} classNames="home">
+			<div ref={myRef} id="foreground-content"></div>
+		</CSSTransition>
 	)
 }
 

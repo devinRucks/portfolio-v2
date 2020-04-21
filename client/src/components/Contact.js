@@ -15,6 +15,7 @@ const Contact = () => {
      return (
           <>
                <section id="contact-section">
+
                     <div id="contact-container">
                          <CSSTransition in={mounted} timeout={1500} classNames="contact">
                               <div className="contact-title">Contact Me</div>

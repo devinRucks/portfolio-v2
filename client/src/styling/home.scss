@@ -1,5 +1,15 @@
 @import '../styling/variables';
 
+.home-enter {
+     opacity: 0;
+}
+
+
+.home-enter-active {
+     opacity: 1;
+     transition: all 1.2s ease-in;
+}
+
 #foreground-content {
      height: 100%;
      width: 100%;
