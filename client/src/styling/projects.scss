@@ -1,12 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 @import '../styling/variables';
 
 
 #projects-container {
-     border: 1px purple solid;
+     // border: 1px purple solid;
      background: $background-color;
-     // margin-top: 50px;
+     margin-top: 50px;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+
+     #projects-heading-container {
+          // border: 1px red solid;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 70vw;
+          margin-left: 20px;
+
+          .projects-heading {
+               font-family: 'Josefin Sans', sans-serif;
+               font-size: 34px;
+               color: #fff;
+          }
+
+          hr {
+               display: block;
+               width: 300px;
+               border: 1px $lighter-gray solid;
+               margin-left: 20px;
+          }
+     }
 }

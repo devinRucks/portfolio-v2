@@ -2,6 +2,7 @@ import React from 'react'
 import '../styling/projectLayout.scss'
 import { AiOutlineGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi"
+import laptopImg from '../media/laptop.png'
 
 const ProjectLayout = (props) => {
      if (!props.reversed) {
@@ -9,8 +10,13 @@ const ProjectLayout = (props) => {
 
                <div id="project-layout-container">
                     <section id="showcase-container">
-                         <img className="image" alt="" src={props.showcase}></img>
-                         <div className="image-overlay"></div>
+                         <img className="laptop" alt="" src={laptopImg}></img>
+                         <div id="video-container">
+                              <video autoPlay muted loop playsInline id="project-video">
+                                   <source src={props.showcase} type="video/mp4" />
+                                        Your browser does not support the video tag. I suggest you upgrade your browser.
+                              </video>
+                         </div>
                     </section>
                     <section id="info-container" style={{ alignItems: "flex-end" }}>
                          <div className="featured-project">Featured Project</div>
@@ -19,8 +25,8 @@ const ProjectLayout = (props) => {
                               {props.description}
                          </section>
                          <section className="techstack">
-                              {props.techstack.map((el) => {
-                                   return <div className="techstack-text">{el}</div>
+                              {props.techstack.map((el, index) => {
+                                   return <div key={index} className="techstack-text">{el}</div>
                               })}
                          </section>
                          <section className="project-links">
@@ -40,8 +46,8 @@ const ProjectLayout = (props) => {
                               {props.description}
                          </section>
                          <section className="techstack">
-                              {props.techstack.map((el) => {
-                                   return <div className="techstack-text">{el}</div>
+                              {props.techstack.map((el, index) => {
+                                   return <div key={index} className="techstack-text">{el}</div>
                               })}
                          </section>
                          <section className="project-links">
@@ -50,8 +56,13 @@ const ProjectLayout = (props) => {
                          </section>
                     </section>
                     <section id="showcase-container">
-                         <img className="image" alt="" src={props.showcase}></img>
-                         <div className="image-overlay"></div>
+                         <img className="laptop" alt="" src={laptopImg}></img>
+                         <div id="video-container">
+                              <video autoPlay muted loop playsInline id="project-video">
+                                   <source src={props.showcase} type="video/mp4" />
+                                        Your browser does not support the video tag. I suggest you upgrade your browser.
+                              </video>
+                         </div>
                     </section>
                </div>
           )
