@@ -20,23 +20,30 @@
      align-items: center;
 
      #heading-container {
+          font-family: 'Josefin Sans', sans-serif;
+          color: $white;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-between;
           align-items: flex-start;
+          height: 160px;
           margin-left: 100px;
-          border: 1px red solid;
+          // border: 1px red solid;
 
-          .heading {
-               font-family: 'Josefin Sans', sans-serif;
-               color: #fff;
-               font-size: 55px;
+          .top-heading {
+               font-family: 'Overpass Mono', monospace;
+               font-size: 20px;
+               padding-bottom: 12px;
+               color: $aqua;
           }
 
-          .sub-heading {
-               font-family: 'Overpass Mono', monospace;
-               font-size: 15px;
-               color: $aqua;
+          .mid-heading {
+               font-size: 60px;
+          }
+
+          .bottom-heading {
+               font-size: 60px;
+               color: $off-white;
           }
      }
 }
