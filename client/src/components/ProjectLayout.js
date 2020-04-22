@@ -7,7 +7,6 @@ import laptopImg from '../media/laptop.png'
 const ProjectLayout = (props) => {
      if (!props.reversed) {
           return (
-
                <div id="project-layout-container">
                     <section id="showcase-container">
                          <img className="laptop" alt="" src={laptopImg}></img>
@@ -19,20 +18,29 @@ const ProjectLayout = (props) => {
                          </div>
                     </section>
                     <section id="info-container" style={{ alignItems: "flex-end" }}>
+
                          <div className="featured-project">Featured Project</div>
-                         <div className="project-title">{props.title}</div>
+
+                         <section className="project-header">
+                              <img className="project-icon" src={props.icon} alt="Icon"></img>
+                              <div className="project-title">{props.title}</div>
+                         </section>
+
                          <section className="project-description">
                               {props.description}
                          </section>
+
                          <section className="techstack">
                               {props.techstack.map((el, index) => {
                                    return <div key={index} className="techstack-text">{el}</div>
                               })}
                          </section>
+
                          <section className="project-links">
                               <AiOutlineGithub color={"#FFFFFF"} size={25} />
                               <FiExternalLink color={"#FFFFFF"} size={25} />
                          </section>
+
                     </section>
                </div>
           )
@@ -40,21 +48,31 @@ const ProjectLayout = (props) => {
           return (
                <div id="project-layout-container">
                     <section id="info-container" style={{ alignItems: "flex-start" }}>
+
                          <div className="featured-project">Featured Project</div>
-                         <div className="project-title">{props.title}</div>
+
+                         <section className="project-header">
+                              <img className="project-icon" src={props.icon} alt="Icon"></img>
+                              <div className="project-title">{props.title}</div>
+                         </section>
+
                          <section className="project-description">
                               {props.description}
                          </section>
+
                          <section className="techstack">
                               {props.techstack.map((el, index) => {
                                    return <div key={index} className="techstack-text">{el}</div>
                               })}
                          </section>
+
                          <section className="project-links">
                               <AiOutlineGithub color={"#FFFFFF"} size={25} />
                               <FiExternalLink color={"#FFFFFF"} size={25} />
                          </section>
+
                     </section>
+
                     <section id="showcase-container">
                          <img className="laptop" alt="" src={laptopImg}></img>
                          <div id="video-container">

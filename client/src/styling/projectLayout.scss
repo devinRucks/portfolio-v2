@@ -65,9 +65,23 @@
                color: $aqua;
           }
 
-          .project-title {
-               font-family: 'Josefin Sans', sans-serif;
-               font-size: 32px;
+          .project-header {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               align-items: center;
+
+               .project-icon {
+                    height: 40px;
+                    width: 40px;
+                    margin-right: 10px;
+               }
+
+               .project-title {
+                    padding-top: 5px;
+                    font-family: 'Josefin Sans', sans-serif;
+                    font-size: 32px;
+               }
           }
 
           .project-description {

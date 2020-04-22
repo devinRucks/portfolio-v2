@@ -30,7 +30,12 @@ const Home = (props) => {
 
 	return (
 		<CSSTransition in={mounted} timeout={1200} classNames="home">
-			<div ref={myRef} id="foreground-content"></div>
+			<div ref={myRef} id="foreground-content">
+				<div id="heading-container">
+					<div className="heading">Devin Rucks</div>
+					<div className="sub-heading">Software Developer</div>
+				</div>
+			</div>
 		</CSSTransition>
 	)
 }

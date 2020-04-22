@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 @import '../styling/variables';
 
 .home-enter {
@@ -13,4 +15,28 @@
 #foreground-content {
      height: 100%;
      width: 100%;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
+
+     #heading-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          margin-left: 100px;
+          border: 1px red solid;
+
+          .heading {
+               font-family: 'Josefin Sans', sans-serif;
+               color: #fff;
+               font-size: 55px;
+          }
+
+          .sub-heading {
+               font-family: 'Overpass Mono', monospace;
+               font-size: 15px;
+               color: $aqua;
+          }
+     }
 }
