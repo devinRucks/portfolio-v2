@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import useWindowDimensions from './WindowDimension'
 import ProjectLayout from './ProjectLayout'
 import stockDataDemo from '../media/stock-app-demo.mp4'
 import stockDataIcon from '../media/stockapp-icon.png'
@@ -15,6 +16,7 @@ import '../styling/projects.scss'
 
 const Projects = (props) => {
      const [mounted, setMount] = useState(false)
+     const { width } = useWindowDimensions();
 
      useEffect(() => {
           setMount(true)
@@ -38,7 +40,7 @@ const Projects = (props) => {
                          title={stockDataTitle}
                          description={stockDataDescription}
                          techstack={stockDataTechStack}
-                         reversed={false}
+                         reversed={width > 1200 ? false : true}
                     />
                </CSSTransition>
 
@@ -68,7 +70,7 @@ const Projects = (props) => {
                          title={weatherAppTitle}
                          description={weatherAppDescription}
                          techstack={weatherAppTechStack}
-                         reversed={false}
+                         reversed={width > 1200 ? false : true}
                     />
                </CSSTransition>
           </div>

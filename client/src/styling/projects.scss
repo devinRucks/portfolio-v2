@@ -4,13 +4,17 @@
 
 
 #projects-container {
-     // border: 1px purple solid;
+     border: 1px purple solid;
      background: $background-color;
      margin-top: 50px;
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+
+     @include max-420 {
+          margin-top: 25px;
+     }
 
      .project-separator {
           display: block;
@@ -20,21 +24,36 @@
           @include max-1200 {
                width: 500px;
           }
-          // margin-left: 20px;
+
+          @include max-420 {
+               width: 300px;
+          }
      }
 
      #projects-heading-container {
-          // border: 1px red solid;
+          border: 1px red solid;
           display: flex;
           justify-content: flex-start;
           align-items: center;
           width: 70vw;
-          margin-left: 20px;
+          // margin-left: 10px;
+
+          @include max-1200 {
+               width: 90vw;
+          }
 
           .projects-heading {
                font-family: 'Josefin Sans', sans-serif;
                font-size: 34px;
                color: #fff;
+
+               @include max-420 {
+                    font-size: 20px;
+               }
+
+               @include max-360 {
+                    font-size: 18px;
+               }
           }
 
           hr {
@@ -42,6 +61,15 @@
                width: 300px;
                border: 1px $lighter-gray solid;
                margin-left: 20px;
+
+               @include max-420 {
+                    width: 125px;
+                    margin-left: 15px;
+               }
+
+               @include max-360 {
+                    width: 100px;
+               }
           }
      }
 

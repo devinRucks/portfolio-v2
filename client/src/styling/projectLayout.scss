@@ -7,20 +7,24 @@
 // font-family: 'Josefin Sans', sans-serif;
 
 #project-layout-container {
-     // border: 1px green solid;
+     border: 1px green solid;
      display: flex;
      flex-direction: row;
      justify-content: space-evenly;
      align-items: center;
      margin: 20px 20px;
-     height: 400px;
+     height: 370px;
      width: 90vw;
      max-width: 1700px;
 
      @include max-1200 {
           flex-direction: column;
-          height: 600px;
+          height: 625px;
           width: 90vw;
+     }
+
+     @include max-360 {
+          height: 525px;
      }
 
 
@@ -35,6 +39,16 @@
                // border: 1px red solid;
                height: 250px;
                width: 450px;
+
+               @include max-420 {
+                    height: 175px;
+                    width: 325px;
+               }
+
+               @include max-360 {
+                    height: 150px;
+                    width: 290px;
+               }
           }
 
           #video-container {
@@ -43,6 +57,20 @@
                right: 64px;
                height: 195px;
                width: 321px;
+
+               @include max-420 {
+                    top: 9px;
+                    right: 47px;
+                    height: 137px;
+                    width: 231px;
+               }
+
+               @include max-360 {
+                    top: 7px;
+                    right: 40px;
+                    height: 120px;
+                    width: 210px;
+               }
 
                #project-video {
                     object-fit: fill;
@@ -53,12 +81,13 @@
      }
 
      #info-container {
-          // border: 1px purple solid;
+          border: 1px purple solid;
           color: $white;
           position: relative;
           display: flex;
           flex-direction: column;
           justify-content: space-evenly;
+          // ALIGN ITEMS IS CONTROLLED IN REACT 
           top: 0;
           right: 0;
           width: 40%;
@@ -66,17 +95,27 @@
 
           @include max-1200 {
                bottom: 0;
-               height: 45%;
-               width: 60%;
+               height: 50%;
+               width: 80%;
+          }
+
+          @include max-420 {
+               width: 100%;
           }
 
           .featured-project {
+               border: 1px blue solid;
                font-family: 'Overpass Mono', monospace;
                font-size: 13px;
                color: $aqua;
+
+               @include max-360 {
+                    font-size: 12px;
+               }
           }
 
           .project-header {
+               border: 1px blue solid;
                display: flex;
                flex-direction: row;
                justify-content: space-between;
@@ -86,43 +125,73 @@
                     height: 40px;
                     width: 40px;
                     margin-right: 10px;
+
+                    @include max-360 {
+                         height: 30px;
+                         width: 30px;
+                         margin-right: 5px;
+                    }
                }
 
                .project-title {
                     padding-top: 5px;
                     font-family: 'Josefin Sans', sans-serif;
                     font-size: 32px;
+
+                    @include max-420 {
+                         font-size: 25px;
+                    }
+
+                    @include max-360 {
+                         font-size: 21px;
+                    }
                }
           }
 
           .project-description {
+               border: 1px blue solid;
                color: $light-text;
                background: $lighter-gray;
                border-radius: 5px;
                padding: 10px 20px;
                font-family: 'Lato', sans-serif;
-               // border: 1px red solid;
+
+               @include max-420 {
+                    font-size: 14px;
+               }
+
+               @include max-360 {
+                    font-size: 12px;
+               }
           }
 
           .techstack {
+               border: 1px blue solid;
                display: flex;
                flex-direction: row;
                justify-content: space-evenly;
                align-items: center;
                width: 100%;
-               // border: 1px red solid;
                font-family: 'Overpass Mono', monospace;
                font-size: 12px;
                padding-bottom: 5px;
+
+               @include max-360 {
+                    font-size: 10px;
+               }
           }
 
           .project-links {
+               border: 1px blue solid;
                display: flex;
                flex-direction: row;
                justify-content: space-evenly;
                align-items: center;
                width: 20%;
-               // border: 1px red solid;
+
+               @include max-420 {
+                    width: 45%;
+               }
           }
 
      }
