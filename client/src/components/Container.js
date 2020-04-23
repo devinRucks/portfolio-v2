@@ -9,13 +9,11 @@ import '../styling/container.scss'
 const Container = ({ location }) => {
      return (
           <div id="content-container">
-               <section id="route-section">
-                    <Switch location={location}>
-                         <Route exact path="/" component={RouteWrapper(Home)} />
-                         <Route path="/projects" component={RouteWrapper(Projects)} />
-                         <Route path="/contact" component={RouteWrapper(Contact)} />
-                    </Switch>
-               </section>
+               <Switch location={location}>
+                    <Route exact path="/" component={RouteWrapper(Home)} />
+                    <Route path="/projects" component={RouteWrapper(Projects)} />
+                    <Route path="/contact" component={RouteWrapper(Contact)} />
+               </Switch>
           </div>
      );
 }

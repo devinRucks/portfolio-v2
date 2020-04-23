@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
 @import '../styling/variables';
+@import '../styling/responsiveMixins';
 
 #navbar-container {
      display: flex;
@@ -13,11 +14,21 @@
      width: 60px;
      border-right: 1px #fff solid;
 
+     @include max-1200 {
+          width: 100%;
+          height: 60px;
+          flex-direction: row;
+          border-right: none;
+          border-bottom: 1px #fff solid;
+
+     }
+
      .link {
           text-decoration: none;
      }
 
      .icon {
+          // border: 1px red solid;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -40,10 +51,12 @@
           background: black;
           height: 55px;
           width: 100%;
-     }
 
-     // #projects-nav {
-     // }
+          @include max-1200 {
+               width: 55px;
+               height: 100%;
+          }
+     }
 
      #extra-links-container {
           display: flex;
@@ -52,23 +65,11 @@
           justify-content: space-evenly;
           height: 220px;
           width: 90%;
-          // border: 1px red solid;
 
-
-          // #github-nav {
-
-          // }
-
-          // #resume-nav {
-
-          // }
-
-          // #contact-nav {
-
-          // }
-
-          // #linkedin-nav {
-
-          // }
+          @include max-1200 {
+               flex-direction: row;
+               width: 220px;
+               height: 90%;
+          }
      }
 }

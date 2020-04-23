@@ -42,6 +42,10 @@ const Projects = (props) => {
                     />
                </CSSTransition>
 
+               <CSSTransition in={mounted} timeout={1000} classNames="projects-title">
+                    <hr className="project-separator" />
+               </CSSTransition>
+
                <CSSTransition in={mounted} timeout={1000} classNames="projects">
                     <ProjectLayout
                          showcase={bfsDemo}
@@ -51,6 +55,10 @@ const Projects = (props) => {
                          techstack={bfsTechStack}
                          reversed={true}
                     />
+               </CSSTransition>
+
+               <CSSTransition in={mounted} timeout={1000} classNames="projects-title">
+                    <hr className="project-separator" />
                </CSSTransition>
 
                <CSSTransition in={mounted} timeout={1000} classNames="projects">

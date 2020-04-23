@@ -1,4 +1,5 @@
 @import '../styling/variables';
+@import '../styling/responsiveMixins';
 
 #content-container {
      background: $background-color;     
@@ -9,18 +10,15 @@
      width: -o-calc(100% - 60px); /* opera */
      width: -webkit-calc(100% - 60px); /* google, safari */
      width: -moz-calc(100% - 60px); /* firefox */
-     // border: 1px red solid;
+     // border: 1px green solid;
 
-     .transition-group {
-          position: relative;
-     }
-
-     #route-section {
-          // border: 1px purple solid;
-          position: absolute;
-          height: 100vh;
+     @include max-1200 {
+          height: calc(100% - 60px);
+          height: -o-calc(100% - 60px); /* opera */
+          height: -webkit-calc(100% - 60px); /* google, safari */
+          height: -moz-calc(100% - 60px); /* firefox */
           width: 100%;
-          top: 0;
-          left: 0;
+          bottom: 0;
      }
+
 }

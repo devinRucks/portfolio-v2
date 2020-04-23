@@ -14,4 +14,29 @@
 	width: 100%;
 }
 
+/* Let's get this party started */
+::-webkit-scrollbar {
+	width: 8px;
+ }
+  
+ /* Track */
+ ::-webkit-scrollbar-track {
+	box-shadow: inset 2px 0 5px $background-color;
+	-webkit-box-shadow: inset 2px 0 5px $background-color; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: $aqua; 
+	box-shadow: inset 2px 0 5px $background-color;
+	-webkit-box-shadow: inset 2px 0 5px $background-color; 
+ }
+ ::-webkit-scrollbar-thumb:window-inactive {
+	 background: $aqua; 
+ }
+
 
