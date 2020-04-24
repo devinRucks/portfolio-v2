@@ -4,7 +4,7 @@
 
 
 #projects-container {
-     border: 1px purple solid;
+     // border: 1px purple solid;
      background: $background-color;
      margin-top: 50px;
      display: flex;
@@ -78,43 +78,4 @@
           }
      }
 
-     .projects-enter {
-          opacity: 0;
-          transform: translateY(-20%);
-          -webkit-transform: translateY(-20%);
-     }
-
-     .projects-title-enter {
-          opacity: 0;
-          transform: translateX(-100%);
-          -webkit-transform: translateX(-100%);
-     }
-
-     @keyframes slide-in {
-          100% { 
-               transform: translateY(0%); 
-               transform: translateX(0%); 
-          }
-     }
-          
-     @-webkit-keyframes slide-in {
-          100% { 
-               -webkit-transform: translateY(0%); 
-               -webkit-transform: translateX(0%); 
-          }
-     }
-
-     .projects-enter-active {
-          opacity: 1;
-          animation: slide-in 1s forwards;
-          -webkit-animation: slide-in 1s forwards;
-          transition: all 1s ease-in;
-     }
-
-     .projects-title-enter-active {
-          opacity: 1;
-          animation: slide-in 1s forwards;
-          -webkit-animation: slide-in 1s forwards;
-          transition: all 1s ease-in;
-     }
 }
