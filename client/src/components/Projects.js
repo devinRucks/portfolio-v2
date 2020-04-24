@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import useWindowDimensions from './WindowDimension'
-import ProjectLayout from './ProjectLayout'
+import Fade from 'react-reveal/Fade';
+import NoteworthyProjects from './NoteworthyProjects'
+import Project from './Project'
 import stockDataDemo from '../media/stock-app-demo.mp4'
 import stockDataIcon from '../media/stockapp-icon.png'
 import bfsDemo from '../media/bfs-demo.mp4'
@@ -10,7 +12,6 @@ import weatherAppIcon from '../media/weather-app-icon.png'
 import { stockDataTitle, stockDataDescription, stockDataTechStack } from '../projects/stockData'
 import { bfsTitle, bfsDescription, bfsTechStack } from '../projects/bfs'
 import { weatherAppTitle, weatherAppDescription, weatherAppTechStack } from '../projects/weatherApp'
-import { CSSTransition } from "react-transition-group";
 import '../styling/projects.scss'
 
 
@@ -24,17 +25,17 @@ const Projects = (props) => {
 
      return (
           <div id="projects-container">
-               <CSSTransition in={mounted} timeout={1000} classNames="projects-title">
+               <Fade left opposite when={mounted}>
                     <section id="projects-heading-container">
                          <div className="projects-heading">
                               Some Things I've Built
                          </div>
                          <hr />
                     </section>
-               </CSSTransition>
+               </Fade>
 
-               <CSSTransition in={mounted} timeout={1000} classNames="projects">
-                    <ProjectLayout
+               <Fade right opposite when={mounted}>
+                    <Project
                          showcase={stockDataDemo}
                          icon={stockDataIcon}
                          title={stockDataTitle}
@@ -42,14 +43,14 @@ const Projects = (props) => {
                          techstack={stockDataTechStack}
                          reversed={width > 1200 ? false : true}
                     />
-               </CSSTransition>
+               </Fade>
 
-               <CSSTransition in={mounted} timeout={1000} classNames="projects-title">
+               <Fade right opposite when={mounted}>
                     <hr className="project-separator" />
-               </CSSTransition>
+               </Fade>
 
-               <CSSTransition in={mounted} timeout={1000} classNames="projects">
-                    <ProjectLayout
+               <Fade left opposite when={mounted}>
+                    <Project
                          showcase={bfsDemo}
                          icon={bfsIcon}
                          title={bfsTitle}
@@ -57,14 +58,14 @@ const Projects = (props) => {
                          techstack={bfsTechStack}
                          reversed={true}
                     />
-               </CSSTransition>
+               </Fade>
 
-               <CSSTransition in={mounted} timeout={1000} classNames="projects-title">
+               <Fade left opposite when={mounted}>
                     <hr className="project-separator" />
-               </CSSTransition>
+               </Fade>
 
-               <CSSTransition in={mounted} timeout={1000} classNames="projects">
-                    <ProjectLayout
+               <Fade right opposite when={mounted}>
+                    <Project
                          showcase={weatherAppDemo}
                          icon={weatherAppIcon}
                          title={weatherAppTitle}
@@ -72,7 +73,9 @@ const Projects = (props) => {
                          techstack={weatherAppTechStack}
                          reversed={width > 1200 ? false : true}
                     />
-               </CSSTransition>
+               </Fade>
+
+               <NoteworthyProjects />
           </div>
      )
 }

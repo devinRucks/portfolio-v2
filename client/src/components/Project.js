@@ -1,11 +1,11 @@
 import React from 'react'
 import useWindowDimensions from './WindowDimension'
-import '../styling/projectLayout.scss'
+import '../styling/project.scss'
 import { AiOutlineGithub } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi"
 import laptopImg from '../media/laptop.png'
 
-const ProjectLayout = (props) => {
+const Project = (props) => {
      const { width } = useWindowDimensions();
 
      if (!props.reversed) {
@@ -50,7 +50,7 @@ const ProjectLayout = (props) => {
      } else {
           return (
                <div id="project-layout-container">
-                    <section id="info-container" style={{ alignItems: (width > 1200) ? "flex-end" : "center" }}>
+                    <section id="info-container" style={{ alignItems: (width > 1200) ? "flex-start" : "center" }}>
 
                          <div className="featured-project">Featured Project</div>
 
@@ -90,4 +90,4 @@ const ProjectLayout = (props) => {
      }
 }
 
-export default ProjectLayout
+export default Project

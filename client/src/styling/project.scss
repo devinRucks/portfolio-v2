@@ -12,7 +12,7 @@
      flex-direction: row;
      justify-content: space-evenly;
      align-items: center;
-     margin: 20px 20px;
+     margin: 10px 20px;
      height: 370px;
      width: 90vw;
      max-width: 1700px;
@@ -23,8 +23,12 @@
           width: 90vw;
      }
 
+     @include max-420 {
+          height: 490px;
+     }
+
      @include max-360 {
-          height: 525px;
+          height: 470px;
      }
 
 
@@ -81,7 +85,7 @@
      }
 
      #info-container {
-          border: 1px purple solid;
+          // border: 1px purple solid;
           color: $white;
           position: relative;
           display: flex;
@@ -100,11 +104,12 @@
           }
 
           @include max-420 {
+               height: 60%;
                width: 100%;
           }
 
           .featured-project {
-               border: 1px blue solid;
+               // border: 1px blue solid;
                font-family: 'Overpass Mono', monospace;
                font-size: 13px;
                color: $aqua;
@@ -115,7 +120,7 @@
           }
 
           .project-header {
-               border: 1px blue solid;
+               // border: 1px blue solid;
                display: flex;
                flex-direction: row;
                justify-content: space-between;
@@ -149,7 +154,7 @@
           }
 
           .project-description {
-               border: 1px blue solid;
+               // border: 1px blue solid;
                color: $light-text;
                background: $lighter-gray;
                border-radius: 5px;
@@ -166,7 +171,7 @@
           }
 
           .techstack {
-               border: 1px blue solid;
+               // border: 1px blue solid;
                display: flex;
                flex-direction: row;
                justify-content: space-evenly;
@@ -182,7 +187,7 @@
           }
 
           .project-links {
-               border: 1px blue solid;
+               // border: 1px blue solid;
                display: flex;
                flex-direction: row;
                justify-content: space-evenly;

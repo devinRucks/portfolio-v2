@@ -1,0 +1,9 @@
+@import './variables';
+
+#noteworthy-project-container {
+     border: 1px red solid;
+     background: $lighter-gray;
+     margin: 10px 10px;
+     height: 380px;
+     width: 330px;
+}

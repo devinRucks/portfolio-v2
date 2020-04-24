@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 
 const LoadingContainer = styled.div`
-     border: 1px red solid;
      height: 100%;
      width: 100%;
      display: flex;
@@ -30,7 +29,7 @@ export default WrappedComponent => {
 
           timer = () => this.setState({ isLoading: false }, () => this.clearTimer());
 
-          setTimer = () => (this.timeout = setTimeout(this.timer, 1700));
+          setTimer = () => (this.timeout = setTimeout(this.timer, 1500));
 
           render = () => (
                <Fragment>

@@ -1,17 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
 @import '../styling/variables';
-
+@import '../styling/responsiveMixins';
 
 
 #contact-section {
+     // border: 1px red solid;
      // font-family: 'Mukta', sans-serif;
      font-family: 'Josefin Sans', sans-serif;
      display: flex;
      justify-content: center;
      align-items: center;
-     height: 100vh;
+     height: 100%;
      width: 45%;
+
+     @include max-1200 {
+          height: calc(100% - 60px);
+          height: -o-calc(100% - 60px); /* opera */
+          height: -webkit-calc(100% - 60px); /* google, safari */
+          height: -moz-calc(100% - 60px); /* firefox */
+          width: 100%;
+     }
 
      #contact-container {
           // border: 1px red solid;
@@ -21,10 +30,24 @@
           height: 55%;
           width: 75%;
 
+          @include max-1200 {
+               padding: 0 10px;
+               height: 75%;
+               width: 90%;
+          }
+
+          @include max-360 {
+               height: 90%;
+          }
+
           .contact-title {
                padding-top: 10px;
                font-size: 60px;
                color: $aqua;
+
+               @include max-360 {
+                    font-size: 50px;
+               }
           }
 
           #form-container {
@@ -47,11 +70,14 @@
                     .email { width: 48%; }
                }
 
-               .subject { width: 100%; }
+               .subject { 
+                    // border: 1px red solid;
+                    width: 100%; 
+               }
 
                input, textarea {
                     outline: none;
-                    color: #555;
+                    color: #777;
                     background: $light-gray;
                     border: none;
                     margin-top: 8px;
@@ -65,8 +91,14 @@
                }
 
                .message {
+                    // border: 1px red solid;
                     height: 50%;
                     width: 100%;
+
+                    @include max-1200 {
+                         height: 200px;
+                         height: 70%;
+                    }
                }
 
                .form-submit {
@@ -102,9 +134,9 @@
 
           .contact-enter-active {
                opacity: 1;
-               animation: slide-in 1.5s forwards;
-               -webkit-animation: slide-in 1.5s forwards;
-               transition: all 1.5s ease-in;
+               animation: slide-in 1.9s forwards;
+               -webkit-animation: slide-in 1.9s forwards;
+               transition: all 1.9s ease-in;
           }
      }
           
@@ -114,7 +146,12 @@
      position: absolute;
      top: 0;
      right: 0;
-     height: 100vh;
+     height: 100%;
      width: 55%;
      background: $empty-background-color;
+
+     @include max-1200 {
+          display: none;
+          width: 30%;
+     }
 }

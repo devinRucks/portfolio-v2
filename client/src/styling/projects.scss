@@ -11,6 +11,8 @@
      flex-direction: column;
      justify-content: center;
      align-items: center;
+     overflow-x: hidden;
+     // max-width: 1700px;
 
      @include max-420 {
           margin-top: 25px;
@@ -26,16 +28,19 @@
           }
 
           @include max-420 {
+               margin-top: 30px;
+               margin-bottom: 30px;
                width: 300px;
           }
      }
 
      #projects-heading-container {
-          border: 1px red solid;
+          // border: 1px red solid;
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          width: 70vw;
+          width: 70%;
+          max-width: 1700px;
           // margin-left: 10px;
 
           @include max-1200 {

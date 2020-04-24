@@ -1,0 +1,11 @@
+
+#noteworthy-projects-container {
+     border: 1px green solid;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     flex-wrap: wrap;
+     height: 100%;
+     width: 80vw;
+     max-width: 1700px;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import RINGS from 'vanta/dist/vanta.rings.min'
+import NET from 'vanta/dist/vanta.net.min'
 import { CSSTransition } from "react-transition-group";
 import Fade from 'react-reveal/Fade';
 import * as THREE from 'three'
@@ -25,9 +25,10 @@ const Home = (props) => {
 
 	useEffect(() => {
 		if (!vantaEffect) {
-			setVantaEffect(RINGS({
+			setVantaEffect(NET({
 				el: myRef.current,
 				scale: 1,
+				showDots: false,
 				color: '#08fdd8',
 				backgroundColor: '#181818',
 				THREE: THREE // use a custom THREE when initializing
