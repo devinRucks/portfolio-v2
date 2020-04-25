@@ -6,7 +6,7 @@ $screen-small-phone-max: 360px;
 $screen-large-phone-max: 420px;
 
 // Tablets and small desktops
-$screen-lg-max: 992px;
+$hamburger-menu-max: 560px;
 
 // Large tablets and desktops
 $medium-desktop-max: 1200px;
@@ -27,6 +27,13 @@ $medium-desktop-max: 1200px;
          @content;
      }
 }
+
+// Hamburger Menu
+@mixin hamburger-max {
+    @media (max-width: #{$hamburger-menu-max}) {
+        @content;
+    }
+}
   
 // Extra large devices
 @mixin max-1200 {
@@ -36,7 +43,6 @@ $medium-desktop-max: 1200px;
 }
 
 //HEIGHT
-
 @mixin max-height-410 {
     @media (max-height: 410px) {
         @content;
