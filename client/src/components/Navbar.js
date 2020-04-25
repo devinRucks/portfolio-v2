@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Slide from 'react-reveal/Slide';
 import HamburgerMenu from 'react-hamburger-menu'
 import useWindowDimensions from './WindowDimension'
 import {
@@ -58,49 +59,51 @@ const Navbar = (props) => {
                     </section>
 
                     {width < 560 &&
-                         <section id="hamburger-menu-container">
+                         <section id="hamburger-container">
                               <HamburgerMenu
                                    isOpen={menuOpen}
                                    menuClicked={handleMenuClick}
-                                   strokeWidth={3}
+                                   strokeWidth={2}
                                    color="#c9c9c9"
-                                   height={25}
-                                   width={40}
+                                   height={20}
+                                   width={35}
                                    animationDuration={.25}
                               />
                          </section>
                     }
                </div>
-               {menuOpen &&
-                    <div id="slide-menu-container">
-                         <section id="slide-menu-link-container">
-                              <Link className="slide-menu-link" onClick={() => handleLinkClick('home')} to="/">
-                                   <AiOutlineHome color={isActive('home') ? "#08fdd8" : "#555555"} size={30} />
-                              </Link>
+               {(width < 560) &&
+                    <Slide top when={menuOpen}>
+                         <div id="slide-menu-container">
+                              <section id="slide-menu-link-container">
+                                   <Link className="slide-menu-link" onClick={() => handleLinkClick('home')} to="/">
+                                        <AiOutlineHome color={isActive('home') ? "#08fdd8" : "#555555"} size={30} />
+                                   </Link>
 
-                              <Link className="slide-menu-link" onClick={() => handleLinkClick('project')} to="/projects">
-                                   <AiOutlineEye color={isActive('project') ? "#08fdd8" : "#555555"} size={30} />
-                              </Link>
+                                   <Link className="slide-menu-link" onClick={() => handleLinkClick('project')} to="/projects">
+                                        <AiOutlineEye color={isActive('project') ? "#08fdd8" : "#555555"} size={35} />
+                                   </Link>
 
-                              <Link className="slide-menu-link" onClick={() => handleLinkClick('contact')} to="/contact">
-                                   <AiOutlineMail color={isActive('contact') ? "#08fdd8" : "#555555"} size={30} />
-                              </Link>
-                         </section>
+                                   <Link className="slide-menu-link" onClick={() => handleLinkClick('contact')} to="/contact">
+                                        <AiOutlineMail color={isActive('contact') ? "#08fdd8" : "#555555"} size={30} />
+                                   </Link>
+                              </section>
 
-                         <hr className="slide-menu-separator" />
+                              <hr className="slide-menu-separator" />
 
-                         <section id="slide-menu-link-container">
-                              <div className="slide-menu-link">
-                                   <AiOutlineGithub color={"#555555"} size={30} />
-                              </div>
-                              <div className="slide-menu-link">
-                                   <AiOutlineContainer color={"#555555"} size={30} />
-                              </div>
-                              <div className="slide-menu-link">
-                                   <AiOutlineLinkedin color={"#555555"} size={30} />
-                              </div>
-                         </section>
-                    </div>
+                              <section id="slide-menu-link-container">
+                                   <div className="slide-menu-link">
+                                        <AiOutlineGithub color={"#555555"} size={30} />
+                                   </div>
+                                   <div className="slide-menu-link">
+                                        <AiOutlineContainer color={"#555555"} size={30} />
+                                   </div>
+                                   <div className="slide-menu-link">
+                                        <AiOutlineLinkedin color={"#555555"} size={30} />
+                                   </div>
+                              </section>
+                         </div>
+                    </Slide>
                }
           </>
      )

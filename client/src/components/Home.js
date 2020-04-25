@@ -28,8 +28,9 @@ const Home = (props) => {
 			setVantaEffect(NET({
 				el: myRef.current,
 				scale: 1,
-				showDots: false,
-				color: '#08fdd8',
+				showDots: true,
+				// color: '#08fdd8',
+				color: '#828282',
 				backgroundColor: '#1d1d1d',
 				THREE: THREE // use a custom THREE when initializing
 			}))
