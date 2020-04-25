@@ -30,7 +30,7 @@ const Home = (props) => {
 				scale: 1,
 				showDots: false,
 				color: '#08fdd8',
-				backgroundColor: '#181818',
+				backgroundColor: '#1d1d1d',
 				THREE: THREE // use a custom THREE when initializing
 			}))
 		}

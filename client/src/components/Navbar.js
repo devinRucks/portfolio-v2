@@ -8,8 +8,7 @@ import {
 import '../styling/navbar.scss'
 
 const Navbar = (props) => {
-     const [active, setActive] = useState('home')
-     const [hover, setHover] = useState(false)
+     const [active, setActive] = useState('')
 
      const handleClick = (value) => {
           setActive(value)
@@ -19,52 +18,32 @@ const Navbar = (props) => {
           return value === active ? true : false
      }
 
-     const toggleHover = () => {
-          setHover(!hover)
-     }
-
      return (
           <div id="navbar-container">
-               <section
-                    id="home-nav" ç
-                    className="icon"
-                    onClick={() => handleClick('home')}
-               >
-                    <Link to="/">
-                         <AiOutlineHome color={isActive('home') ? "#08fdd8" : "#555555"} size={30} />
+
+               <section id="main-links-container">
+                    <Link id="home-nav" className="link" onClick={() => handleClick('home')} to="/">
+                         <AiOutlineHome color={isActive('home') ? "#08fdd8" : "#555555"} size={25} />
                     </Link>
-               </section>
 
-               <section
-                    id="projects-nav"
-                    className="icon"
-                    onClick={() => handleClick('project')}
-                    onMouseEnter={toggleHover}
-                    onMouseLeave={toggleHover}
-               >
+                    <Link id="my-work-nav" className="link" onClick={() => handleClick('project')} to="/projects">
+                         <AiOutlineEye color={isActive('project') ? "#08fdd8" : "#555555"} size={30} />
+                    </Link>
 
-                    <Link className="link" to="/projects">
-                         {!hover
-                              ? <AiOutlineEye color={isActive('project') ? "#08fdd8" : "#555555"} size={40} />
-                              : <h2 className="icon-text">Projects</h2>
-                         }
+                    <Link id="contact-nav" className="link" onClick={() => handleClick('contact')} to="/contact">
+                         <AiOutlineMail color={isActive('contact') ? "#08fdd8" : "#555555"} size={25} />
                     </Link>
                </section>
 
                <section id="extra-links-container">
-                    <div id="github-nav" className="icon">
-                         <AiOutlineGithub color={"#555555"} size={25} />
+                    <div id="github-nav" className="extra-link">
+                         <AiOutlineGithub color={"#555555"} size={18} />
                     </div>
-                    <div id="resume-nav" className="icon">
-                         <AiOutlineContainer color={"#555555"} size={25} />
+                    <div id="resume-nav" className="extra-link">
+                         <AiOutlineContainer color={"#555555"} size={18} />
                     </div>
-                    <div id="contact-nav" className="icon" onClick={() => handleClick('contact')}>
-                         <Link to="/contact">
-                              <AiOutlineMail color={isActive('contact') ? "#08fdd8" : "#555555"} size={25} />
-                         </Link>
-                    </div>
-                    <div id="linkedin-nav" className="icon">
-                         <AiOutlineLinkedin color={"#555555"} size={25} />
+                    <div id="linkedin-nav" className="extra-link">
+                         <AiOutlineLinkedin color={"#555555"} size={18} />
                     </div>
                </section>
           </div>

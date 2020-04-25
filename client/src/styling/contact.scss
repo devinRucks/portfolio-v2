@@ -40,6 +40,16 @@
                height: 90%;
           }
 
+          @include max-height-410 {
+               height: 90%;
+               width: 90%;
+          }
+
+          @include max-height-600 {
+               height: 90%;
+               width: 90%;
+          }
+
           .contact-title {
                padding-top: 10px;
                font-size: 60px;
@@ -47,6 +57,10 @@
 
                @include max-360 {
                     font-size: 50px;
+               }
+
+               @include max-height-410 {
+                    font-size: 45px;
                }
           }
 
@@ -98,6 +112,10 @@
                     @include max-1200 {
                          height: 200px;
                          height: 70%;
+                    }
+
+                    @include max-height-410 {
+                         height: 40%;
                     }
                }
 

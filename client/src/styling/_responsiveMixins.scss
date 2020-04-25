@@ -9,7 +9,10 @@ $screen-large-phone-max: 420px;
 $screen-lg-max: 992px;
 
 // Large tablets and desktops
-$screen-xl-max: 1200px;
+$medium-desktop-max: 1200px;
+
+
+// WIDTH
 
 // Small devices
 @mixin max-360 {
@@ -25,16 +28,24 @@ $screen-xl-max: 1200px;
      }
 }
   
-// Large devices
-@mixin lg {
-     @media (max-width: #{$screen-lg-min}) {
-         @content;
-     }
-}
-  
 // Extra large devices
 @mixin max-1200 {
-     @media (max-width: #{$screen-xl-max}) {
-         @content;
-     }
+    @media (max-width: #{$medium-desktop-max}) {
+        @content;
+    }
+}
+
+//HEIGHT
+
+@mixin max-height-410 {
+    @media (max-height: 410px) {
+        @content;
+    }
+}
+
+
+@mixin max-height-600 {
+    @media (max-height: 600px) {
+        @content;
+    }
 }
