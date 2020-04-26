@@ -34,6 +34,18 @@ $medium-desktop-max: 1200px;
         @content;
     }
 }
+
+@mixin max-605 {
+    @media (max-width: 605px) {
+        @content;
+    }
+}
+
+@mixin max-800 {
+    @media (max-width: 800px) {
+        @content;
+    }
+}
   
 // Extra large devices
 @mixin max-1200 {

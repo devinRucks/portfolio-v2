@@ -43,15 +43,14 @@
      }
 
      #main-links-container {
-          // border: 1px blue solid;
-          // position: relative;
-          // top: 40%;
+          // border: 1px red solid;
+          position: absolute;
           display: flex;
           flex-direction: column;
           align-items: center;
 
           @include max-1200 {
-               top: 0;
+               top: 15%;
                left: 45%;
                flex-direction: row;
           }
@@ -59,6 +58,48 @@
           @include hamburger-max {
                display: none;
           }
+
+          .link {
+               // border: 1px blue solid;
+               text-decoration: none;
+               list-style: none;
+               height: 45px;
+               width: 45px;
+     
+               .link-text {
+                    font-family: 'Overpass Mono', monospace;
+                    font-size: 9px;
+                    color: $aqua;
+               }
+     
+               .icon-container {
+                    // border: 1px red solid;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 100;
+                    height: 45px;
+                    width: 45px;
+                    background: $dark-gray;
+                    transition: opacity .2s ease-out;
+     
+                    &:hover {
+                         opacity: 0;
+                    }
+     
+                    .link-icon {
+                         position: absolute;
+                         z-index: 100;
+                         background: $dark-gray;
+                         // height: 45px;
+                         // width: 45px;
+               
+                    }
+               }
+          
+          }
+     
      }
 
 
@@ -104,11 +145,6 @@
           cursor: pointer;
      }
 
-     .link {
-          // border: 1px red solid;
-          height: 45px;
-          width: 45px;
-     }
 
      .extra-link {
           height: 20px;

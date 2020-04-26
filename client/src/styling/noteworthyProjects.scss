@@ -10,12 +10,13 @@
      justify-content: center;
      flex-wrap: wrap;
      padding-top: 160px;
+     padding-bottom: 60px;
      height: 100%;
      width: 90vw;
      max-width: 1700px;
 
      #noteworthy-projects-separator {
-          border: 1px red solid;
+          // border: 1px red solid;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -27,13 +28,46 @@
                display: block;
                margin: 0 10px;
                width: 150px;
-               border: .5px $light-text solid;
+               border: 1px $lighter-gray solid;
+
+               @include max-800 {
+                    width: 100px;
+               }
+
+               @include max-605 {
+                    width: 80px
+               }
+
+               
+          }
+          .left-hr {
+               @include max-420 {
+                    display: none;
+               }
+          }
+
+          .right-hr {
+               @include max-420 {
+                    width: 40px;
+               }
           }
 
           .noteworthy-projects-title {
                font-family: 'Lato', sans-serif;
                font-size: 30px;
                color: $white;
+
+               @include max-800 {
+                    font-size: 25px;
+               }
+
+               @include max-605 {
+                    font-size: 20px;
+               }
+
+               @include max-420 {
+                    font-size: 20px;
+               }
           }
      }
 }

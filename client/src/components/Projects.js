@@ -19,7 +19,7 @@ import weatherApp from '../projects/featured/weatherApp'
 import '../styling/projects.scss'
 
 
-const Projects = (props) => {
+const Projects = () => {
      const [mounted, setMount] = useState(false)
      const { width } = useWindowDimensions();
 
@@ -40,7 +40,7 @@ const Projects = (props) => {
 
                <Fade right opposite when={mounted}>
                     <Project
-                         showcase={stockDataDemo}
+                         // showcase={stockDataDemo}
                          icon={stockDataIcon}
                          title={stockData.title}
                          description={stockData.description}
@@ -55,7 +55,7 @@ const Projects = (props) => {
 
                <Fade left opposite when={mounted}>
                     <Project
-                         showcase={bfsDemo}
+                         // showcase={bfsDemo}
                          icon={bfsIcon}
                          title={bfs.title}
                          description={bfs.description}
@@ -70,7 +70,7 @@ const Projects = (props) => {
 
                <Fade right opposite when={mounted}>
                     <Project
-                         showcase={weatherAppDemo}
+                         // showcase={weatherAppDemo}
                          icon={weatherAppIcon}
                          title={weatherApp.title}
                          description={weatherApp.description}

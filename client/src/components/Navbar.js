@@ -34,31 +34,42 @@ const Navbar = (props) => {
                <div id="navbar-container" style={{ justifyContent: width < 560 ? "flex-end" : "center" }}>
 
                     <section id="logo-container">
-                         <img className="logo" src={logo} alt="" />
+                         <Link onClick={() => handleLinkClick('home')} to="/">
+                              <img className="logo" src={logo} alt="" />
+                         </Link>
                     </section>
 
                     <section id="main-links-container">
-                         <Link id="home-nav" className="link" onClick={() => handleLinkClick('home')} to="/">
-                              <AiOutlineHome color={isActive('home') ? "#08fdd8" : "#555555"} size={25} />
+                         <Link className="link" onClick={() => handleLinkClick('home')} to="/">
+                              <div className="link-text">Home</div>
+                              <section className="icon-container">
+                                   <AiOutlineHome className="link-icon" color={isActive('home') ? "#08fdd8" : "#555555"} size={28} />
+                              </section>
                          </Link>
 
-                         <Link id="my-work-nav" className="link" onClick={() => handleLinkClick('project')} to="/projects">
-                              <AiOutlineEye color={isActive('project') ? "#08fdd8" : "#555555"} size={30} />
+                         <Link className="link" onClick={() => handleLinkClick('project')} to="/projects">
+                              <div className="link-text">Projects</div>
+                              <section className="icon-container">
+                                   <AiOutlineEye className="link-icon" color={isActive('project') ? "#08fdd8" : "#555555"} size={30} />
+                              </section>
                          </Link>
 
-                         <Link id="contact-nav" className="link" onClick={() => handleLinkClick('contact')} to="/contact">
-                              <AiOutlineMail color={isActive('contact') ? "#08fdd8" : "#555555"} size={25} />
+                         <Link className="link" onClick={() => handleLinkClick('contact')} to="/contact">
+                              <div className="link-text">Contact</div>
+                              <section className="icon-container">
+                                   <AiOutlineMail className="link-icon" color={isActive('contact') ? "#08fdd8" : "#555555"} size={25} />
+                              </section>
                          </Link>
                     </section>
 
                     <section id="extra-links-container">
-                         <div id="github-nav" className="extra-link">
+                         <div className="extra-link">
                               <AiOutlineGithub color={"#555555"} size={18} />
                          </div>
-                         <div id="resume-nav" className="extra-link">
+                         <div className="extra-link">
                               <AiOutlineContainer color={"#555555"} size={18} />
                          </div>
-                         <div id="linkedin-nav" className="extra-link">
+                         <div className="extra-link">
                               <AiOutlineLinkedin color={"#555555"} size={18} />
                          </div>
                     </section>
