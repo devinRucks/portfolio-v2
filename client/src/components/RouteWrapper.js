@@ -1,16 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router";
+import logo from '../media/portfolio-logo.png'
+import '../styling/loading.scss'
 import BarLoader from "react-spinners/BarLoader";
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-
-const LoadingContainer = styled.div`
-     height: 100%;
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-`
 
 export default WrappedComponent => {
      class Wrapper extends Component {
@@ -35,14 +29,16 @@ export default WrappedComponent => {
                <Fragment>
                     {this.state.isLoading
                          ?
-                         <LoadingContainer>
+                         <section id="loading-container">
+                              <img className="logo" src={logo} alt="" />
+                              <div className="text">Devin is thinking</div>
                               <BarLoader
                                    height={1}
                                    width={200}
                                    color={'#08fdd8'}
                                    loading={this.state.loading}
                               />
-                         </LoadingContainer>
+                         </section>
                          : <WrappedComponent {...this.props} />
                     }
                </Fragment>

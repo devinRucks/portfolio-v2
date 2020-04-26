@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300&display=swap');
+@import '../styling/variables';
+
+#loading-container {
+     height: 100%;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+
+     .logo {
+          height: 60px;
+          width: 60px;
+          opacity: .4;
+          margin-bottom: 15px;
+     }
+
+     .text {
+          font-family: 'Overpass Mono', monospace;
+          color: $aqua;
+          opacity: .4;
+          font-size: 10px;
+          margin-bottom: 10px;
+     }
+}

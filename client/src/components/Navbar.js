@@ -34,7 +34,7 @@ const Navbar = (props) => {
                <div id="navbar-container" style={{ justifyContent: width < 560 ? "flex-end" : "center" }}>
 
                     <section id="logo-container">
-                         <img className="logo" src={logo} />
+                         <img className="logo" src={logo} alt="" />
                     </section>
 
                     <section id="main-links-container">
@@ -69,7 +69,7 @@ const Navbar = (props) => {
                                    isOpen={menuOpen}
                                    menuClicked={handleMenuClick}
                                    strokeWidth={2}
-                                   color="#c9c9c9"
+                                   color="#08fdd8"
                                    height={20}
                                    width={35}
                                    animationDuration={.25}
