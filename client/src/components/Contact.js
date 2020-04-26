@@ -19,11 +19,11 @@ const Contact = () => {
      }, [mounted])
 
      useEffect(() => {
-          setTimeout(() => setContactTitle(true), 800)
-          setTimeout(() => setNameAndEmail(true), 950)
-          setTimeout(() => setSubject(true), 1000)
-          setTimeout(() => setMessage(true), 1200)
-          setTimeout(() => setButton(true), 1400)
+          setTimeout(() => setContactTitle(true), 500)
+          setTimeout(() => setNameAndEmail(true), 550)
+          setTimeout(() => setSubject(true), 600)
+          setTimeout(() => setMessage(true), 650)
+          setTimeout(() => setButton(true), 700)
      }, [showContactTitle, showNameAndEmail, showSubject, showMessage, showButton])
 
      return (

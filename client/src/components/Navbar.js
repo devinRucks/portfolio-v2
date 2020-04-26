@@ -8,6 +8,7 @@ import {
      AiOutlineGithub, AiOutlineContainer,
      AiOutlineMail, AiOutlineLinkedin
 } from "react-icons/ai";
+import logo from '../media/portfolio-logo.png'
 import '../styling/navbar.scss'
 
 const Navbar = (props) => {
@@ -31,6 +32,10 @@ const Navbar = (props) => {
      return (
           <>
                <div id="navbar-container" style={{ justifyContent: width < 560 ? "flex-end" : "center" }}>
+
+                    <section id="logo-container">
+                         <img className="logo" src={logo} />
+                    </section>
 
                     <section id="main-links-container">
                          <Link id="home-nav" className="link" onClick={() => handleLinkClick('home')} to="/">

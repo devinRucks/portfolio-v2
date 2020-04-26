@@ -22,6 +22,26 @@
           // border-bottom: 1px #fff solid;
      }
 
+     #logo-container {
+          // border: 1px red solid;
+          position: absolute;
+          background: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 0;
+          left: 0;
+          height: 60px;
+          width: 60px;
+
+          .logo {
+               cursor: pointer;
+               object-fit: fill;
+               height: 50px;
+               width: 50px;
+          }
+     }
+
      #main-links-container {
           // border: 1px blue solid;
           // position: relative;
@@ -116,6 +136,8 @@
      flex-direction: row;
      justify-content: space-evenly;
      align-items: center;
+     border-bottom-left-radius: 5px;
+     border-top: 2px $light-gray solid;
      z-index: 999;
      top: 60px;
      right: 0;
