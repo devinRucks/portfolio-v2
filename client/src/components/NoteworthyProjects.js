@@ -31,11 +31,11 @@ const NoteworthyProjects = () => {
 
                <Fade left when={mounted}>
                     <NoteworthyProject
-                         hasLiveSite={true}
+                         hasLiveSite={false}
                          title={shopping.title}
                          description={shopping.description}
                          techStack={shopping.techStack}
-
+                         githubLink={shopping.githubLink}
                     />
                </Fade>
 
@@ -45,7 +45,7 @@ const NoteworthyProjects = () => {
                          title={inventory.title}
                          description={inventory.description}
                          techStack={inventory.techStack}
-
+                         githubLink={inventory.githubLink}
                     />
                </Fade>
 
@@ -55,6 +55,7 @@ const NoteworthyProjects = () => {
                          title={clock.title}
                          description={clock.description}
                          techStack={clock.techStack}
+                         githubLink={clock.githubLink}
                     />
                </Fade>
 
@@ -64,6 +65,7 @@ const NoteworthyProjects = () => {
                          title={snake.title}
                          description={snake.description}
                          techStack={snake.techStack}
+                         githubLink={snake.githubLink}
 
                     />
                </Fade>

@@ -63,15 +63,15 @@ const Navbar = (props) => {
                     </section>
 
                     <section id="extra-links-container">
-                         <div className="extra-link">
+                         <a className="extra-link" target="_blank" rel="noopener noreferrer" href="https://github.com/devinRucks">
                               <AiOutlineGithub color={"#555555"} size={18} />
-                         </div>
+                         </a>
                          <div className="extra-link">
                               <AiOutlineContainer color={"#555555"} size={18} />
                          </div>
-                         <div className="extra-link">
+                         <a className="extra-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/devin-rucks-264811199/">
                               <AiOutlineLinkedin color={"#555555"} size={18} />
-                         </div>
+                         </a>
                     </section>
 
                     {width < 560 &&
@@ -108,15 +108,15 @@ const Navbar = (props) => {
                               <hr className="slide-menu-separator" />
 
                               <section id="slide-menu-link-container">
-                                   <div className="slide-menu-link">
+                                   <a className="slide-menu-link" rel="noopener noreferrer" target="_blank" href="https://github.com/devinRucks">
                                         <AiOutlineGithub color={"#555555"} size={30} />
-                                   </div>
+                                   </a>
                                    <div className="slide-menu-link">
                                         <AiOutlineContainer color={"#555555"} size={30} />
                                    </div>
-                                   <div className="slide-menu-link">
+                                   <a className="slide-menu-link" rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/devin-rucks-264811199/">
                                         <AiOutlineLinkedin color={"#555555"} size={30} />
-                                   </div>
+                                   </a>
                               </section>
                          </div>
                     </Slide>

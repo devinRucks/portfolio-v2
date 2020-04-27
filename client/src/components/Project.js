@@ -40,8 +40,12 @@ const Project = (props) => {
                          </section>
 
                          <section className="project-links">
-                              <AiOutlineGithub color={"#FFFFFF"} size={25} />
-                              <FiExternalLink color={"#FFFFFF"} size={25} />
+                              <a target="_blank" rel="noopener noreferrer" href={props.githubLink}>
+                                   <AiOutlineGithub color={"#FFFFFF"} size={25} />
+                              </a>
+                              <a target="_blank" rel="noopener noreferrer" href={props.siteLink}>
+                                   <FiExternalLink color={"#FFFFFF"} size={25} />
+                              </a>
                          </section>
 
                     </section>
@@ -70,8 +74,12 @@ const Project = (props) => {
                          </section>
 
                          <section className="project-links">
-                              <AiOutlineGithub color={"#FFFFFF"} size={25} />
-                              <FiExternalLink color={"#FFFFFF"} size={25} />
+                              <a target="_blank" rel="noopener noreferrer" href={props.githubLink}>
+                                   <AiOutlineGithub color={"#FFFFFF"} size={25} />
+                              </a>
+                              <a target="_blank" rel="noopener noreferrer" href={props.siteLink}>
+                                   <FiExternalLink color={"#FFFFFF"} size={25} />
+                              </a>
                          </section>
 
                     </section>

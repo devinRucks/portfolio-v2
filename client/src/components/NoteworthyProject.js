@@ -10,9 +10,13 @@ const NoteworthyProject = (props) => {
                <section id="project-header">
                     <AiOutlineFolderOpen color={"#08fdd8"} size={50} />
                     <div className="links-container">
-                         <AiOutlineGithub className="link" color={"#C9C9C9"} size={25} />
+                         <a target="_blank" rel="noopener noreferrer" href={props.githubLink}>
+                              <AiOutlineGithub className="link" color={"#C9C9C9"} size={25} />
+                         </a>
                          {props.hasLiveSite &&
-                              <FiExternalLink className="link" color={"#C9C9C9"} size={25} />
+                              <a target="_blank" rel="noopener noreferrer" href={props.siteLink}>
+                                   <FiExternalLink className="link" color={"#C9C9C9"} size={25} />
+                              </a>
                          }
                     </div>
                </section>

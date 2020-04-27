@@ -40,11 +40,13 @@ const Projects = () => {
 
                <Fade right opposite when={mounted}>
                     <Project
-                         // showcase={stockDataDemo}
+                         showcase={stockDataDemo}
                          icon={stockDataIcon}
                          title={stockData.title}
                          description={stockData.description}
                          techstack={stockData.techStack}
+                         githubLink={stockData.githubLink}
+                         siteLink={stockData.siteLink}
                          reversed={width > 1200 ? false : true}
                     />
                </Fade>
@@ -55,11 +57,13 @@ const Projects = () => {
 
                <Fade left opposite when={mounted}>
                     <Project
-                         // showcase={bfsDemo}
+                         showcase={bfsDemo}
                          icon={bfsIcon}
                          title={bfs.title}
                          description={bfs.description}
                          techstack={bfs.techStack}
+                         githubLink={bfs.githubLink}
+                         siteLink={bfs.siteLink}
                          reversed={true}
                     />
                </Fade>
@@ -70,11 +74,13 @@ const Projects = () => {
 
                <Fade right opposite when={mounted}>
                     <Project
-                         // showcase={weatherAppDemo}
+                         showcase={weatherAppDemo}
                          icon={weatherAppIcon}
                          title={weatherApp.title}
                          description={weatherApp.description}
                          techstack={weatherApp.techStack}
+                         githubLink={weatherApp.githubLink}
+                         siteLink={weatherApp.siteLink}
                          reversed={width > 1200 ? false : true}
                     />
                </Fade>
