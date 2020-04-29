@@ -9,7 +9,7 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Router basename="/">
+			<Router basename="/client">
 				<Navbar />
 				<Container />
 			</Router>
