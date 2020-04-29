@@ -9,7 +9,7 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<Router basename="/client">
+			<Router basename="/React">
 				<Navbar />
 				<Container />
 			</Router>
