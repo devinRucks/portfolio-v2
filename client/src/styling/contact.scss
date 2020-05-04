@@ -131,19 +131,46 @@ textarea { resize: none; }
                     }
                }
 
-               .form-submit {
-                    font-family: 'Josefin Sans', sans-serif;
-                    outline: none;
-                    cursor: pointer;
-                    background: $dark-gray;
+               #submit-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
                     margin-top: 10px;
-                    padding-top: 2px;
-                    height: 30px;
-                    width: 60px;
-                    color: $aqua;
-                    border: 1px $aqua solid;
-                    border-radius: 5px;
+                    // border: 1px blue solid;
+                    width: 180px;
+
+                    .form-submit {
+                         font-family: 'Josefin Sans', sans-serif;
+                         outline: none;
+                         cursor: pointer;
+                         background: $dark-gray;
+                         padding-top: 2px;
+                         height: 30px;
+                         width: 60px;
+                         color: $aqua;
+                         border: 1px $aqua solid;
+                         border-radius: 5px;
+                    }
+
+                    #form-message-container {
+                         display: flex;
+                         flex-direction: row;
+                         justify-content: space-between;
+                         align-items: center;
+
+                         .form-message {
+                              font-family: 'Mukta', sans-serif;
+                              font-size: 16px;
+                              padding-right: 5px;
+                              // border: 1px red solid;
+                         }
+
+                         .success { color: $aqua; font-size: 13px; }
+                         .error { color: red; margin-right: 20px; }
+                    }
                }
+
 
                
           }
@@ -169,7 +196,7 @@ textarea { resize: none; }
                transition: all 1.9s ease-in;
           }
 
-          #alert-container {
+          #required-container {
                display: flex;
                justify-content: center;
                align-items: center;

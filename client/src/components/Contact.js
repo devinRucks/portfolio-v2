@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade';
 import { useForm } from 'react-hook-form'
 import { FiAlertCircle } from "react-icons/fi"
+import { AiOutlineCheck } from "react-icons/ai"
 import '../styling/contact.scss'
 
+// used for Netlify Form Submission
 const encode = (data) => {
      return Object.keys(data)
           .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -11,6 +13,8 @@ const encode = (data) => {
 }
 
 const Contact = () => {
+     const [displayFormSuccess, setFormSuccess] = useState(false)
+     const [submitClicked, setSubmitClicked] = useState(false)
      const [mounted, setMount] = useState(false)
      const [showContactTitle, setContactTitle] = useState(false)
      const [showNameAndEmail, setNameAndEmail] = useState(false)
@@ -19,16 +23,25 @@ const Contact = () => {
      const [showButton, setButton] = useState(false)
 
      const { register, handleSubmit, errors } = useForm()
+
      const onSubmit = (data, e) => {
+
           fetch("/", {
                method: "POST",
                headers: { "Content-Type": "application/x-www-form-urlencoded" },
                body: encode({ "form-name": "contact", ...data })
           })
-               .then(() => alert("Success!"))
-               .catch(error => alert(error));
+               .then(() => {
+                    setFormSuccess(true)
+                    setSubmitClicked(true)
+               })
+               .catch(() => {
+                    setFormSuccess(false)
+                    setSubmitClicked(true)
+               });
 
           e.preventDefault();
+          e.target.reset()
      }
 
      useEffect(() => {
@@ -72,7 +85,7 @@ const Contact = () => {
                                              />
                                         </Fade>
                                         {errors.email && errors.email.type === 'required' &&
-                                             <section id="alert-container">
+                                             <section id="required-container">
                                                   <FiAlertCircle color={"#FF0000"} size={15} />
                                              </section>
                                         }
@@ -94,7 +107,7 @@ const Contact = () => {
                                                   ref={register({ required: true })}
                                              />
                                              {errors.message && errors.message.type === 'required' &&
-                                                  <section id="alert-container">
+                                                  <section id="required-container">
                                                        <FiAlertCircle color={"#FF0000"} size={15} />
                                                   </section>
                                              }
@@ -103,7 +116,24 @@ const Contact = () => {
 
 
                                    <Fade left opposite when={showButton}>
-                                        <button className="form-submit" type="submit">Submit</button>
+                                        <section id="submit-container">
+                                             <button className="form-submit" type="submit">Submit</button>
+
+                                             {submitClicked &&
+                                                  <section id="form-message-container">
+                                                       {displayFormSuccess ?
+                                                            <>
+                                                                 <p className="form-message success">Message Sent!</p>
+                                                                 <AiOutlineCheck color={"#08fdd8"} size={15} />
+                                                            </> :
+                                                            <>
+                                                                 <p className="form-message error"> Error.. </p>
+                                                                 <FiAlertCircle color={"#FF0000"} size={15} />
+                                                            </>
+                                                       }
+                                                  </section>
+                                             }
+                                        </section>
                                    </Fade>
                               </form>
                          </section>
