@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade';
+import HeadShake from 'react-reveal/HeadShake';
+import Slide from 'react-reveal/Slide';
 import { useForm } from 'react-hook-form'
 import { FiAlertCircle } from "react-icons/fi"
 import { AiOutlineCheck } from "react-icons/ai"
@@ -122,14 +124,14 @@ const Contact = () => {
                                              {submitClicked &&
                                                   <section id="form-message-container">
                                                        {displayFormSuccess ?
-                                                            <>
+                                                            <Slide bottom>
                                                                  <p className="form-message success">Message Sent!</p>
                                                                  <AiOutlineCheck color={"#08fdd8"} size={15} />
-                                                            </> :
-                                                            <>
+                                                            </Slide> :
+                                                            <HeadShake>
                                                                  <p className="form-message error"> Error.. </p>
                                                                  <FiAlertCircle color={"#FF0000"} size={15} />
-                                                            </>
+                                                            </HeadShake>
                                                        }
                                                   </section>
                                              }
