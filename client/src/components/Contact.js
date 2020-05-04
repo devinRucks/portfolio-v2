@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade';
 import { useForm } from 'react-hook-form'
+import { FiAlertCircle } from "react-icons/fi"
 import '../styling/contact.scss'
+
+const encode = (data) => {
+     return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+}
 
 const Contact = () => {
      const [mounted, setMount] = useState(false)
@@ -12,7 +19,17 @@ const Contact = () => {
      const [showButton, setButton] = useState(false)
 
      const { register, handleSubmit, errors } = useForm()
-     const onSubmit = data => { console.log(data) }
+     const onSubmit = (data, e) => {
+          fetch("/", {
+               method: "POST",
+               headers: { "Content-Type": "application/x-www-form-urlencoded" },
+               body: encode({ "form-name": "contact", ...data })
+          })
+               .then(() => alert("Success!"))
+               .catch(error => alert(error));
+
+          e.preventDefault();
+     }
 
      useEffect(() => {
           setMount(true)
@@ -37,7 +54,8 @@ const Contact = () => {
 
                          <section id="form-container">
                               {/* "handleSubmit" will validate your inputs before invoking "onSubmit" */}
-                              <form onSubmit={handleSubmit(onSubmit)}>
+                              <form name="contact" netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit(onSubmit)}>
+                                   <input type="hidden" name="form-name" value="contact" />
                                    <section id="name-email-container">
                                         <Fade left opposite when={showNameAndEmail}>
                                              <input
@@ -50,15 +68,14 @@ const Contact = () => {
                                                   className="email"
                                                   name="email"
                                                   placeholder="Email"
-                                                  ref={register({
-                                                       required: 'Required',
-                                                       pattern: {
-                                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                                                            message: "invalid email address"
-                                                       }
-                                                  })}
+                                                  ref={register({ required: true })}
                                              />
                                         </Fade>
+                                        {errors.email && errors.email.type === 'required' &&
+                                             <section id="alert-container">
+                                                  <FiAlertCircle color={"#FF0000"} size={15} />
+                                             </section>
+                                        }
                                    </section>
                                    <Fade left opposite when={showSubject}>
                                         <input
@@ -69,18 +86,24 @@ const Contact = () => {
                                         />
                                    </Fade>
                                    <Fade left opposite when={showMessage}>
-                                        <textarea
-                                             className="message"
-                                             name="message"
-                                             placeholder="Message"
-                                             ref={register({ required: true })}
-                                        />
+                                        <section id="message-container">
+                                             <textarea
+                                                  className="message"
+                                                  name="message"
+                                                  placeholder="Message"
+                                                  ref={register({ required: true })}
+                                             />
+                                             {errors.message && errors.message.type === 'required' &&
+                                                  <section id="alert-container">
+                                                       <FiAlertCircle color={"#FF0000"} size={15} />
+                                                  </section>
+                                             }
+                                        </section>
                                    </Fade>
 
-                                   {errors.exampleRequired && <span>This field is required</span>}
 
                                    <Fade left opposite when={showButton}>
-                                        <button className="form-submit" type="submit">Send</button>
+                                        <button className="form-submit" type="submit">Submit</button>
                                    </Fade>
                               </form>
                          </section>

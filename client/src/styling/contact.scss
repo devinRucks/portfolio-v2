@@ -3,6 +3,8 @@
 @import '../styling/variables';
 @import '../styling/responsiveMixins';
 
+textarea { resize: none; }
+
 
 #contact-section {
      // border: 1px red solid;
@@ -73,6 +75,7 @@
 
                #name-email-container {
                     display: flex;
+                    position: relative;
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
@@ -104,10 +107,19 @@
                     }
                }
 
-               .message {
+               #message-container {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     // border: 1px red solid;
-                    height: 50%;
+                    height: 60%;
                     width: 100%;
+
+                    .message {
+                         height: 90%;
+                         width: 100%;
+                    }
 
                     @include max-1200 {
                          height: 200px;
@@ -155,6 +167,15 @@
                animation: slide-in 1.9s forwards;
                -webkit-animation: slide-in 1.9s forwards;
                transition: all 1.9s ease-in;
+          }
+
+          #alert-container {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               position: absolute;
+               right: -18px;
+               // border: 1px red solid;
           }
      }
           
