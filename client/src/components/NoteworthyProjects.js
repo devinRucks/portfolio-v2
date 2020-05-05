@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Fade from 'react-reveal/Fade';
 
 import NoteworthyProject from './NoteworthyProject'
-import clock from '../projects/noteworthy/clock'
 import shopping from '../projects/noteworthy/shopping'
 import inventory from '../projects/noteworthy/inventory'
+import mutualFund from '../projects/noteworthy/mutualFund'
+import clock from '../projects/noteworthy/clock'
 import snake from '../projects/noteworthy/snake'
 
 import '../styling/noteworthyProjects.scss'
@@ -46,6 +47,17 @@ const NoteworthyProjects = () => {
                          description={inventory.description}
                          techStack={inventory.techStack}
                          githubLink={inventory.githubLink}
+                    />
+               </Fade>
+
+               <Fade left when={mounted}>
+                    <NoteworthyProject
+                         hasLiveSite={false}
+                         title={mutualFund.title}
+                         description={mutualFund.description}
+                         techStack={mutualFund.techStack}
+                         githubLink={mutualFund.githubLink}
+
                     />
                </Fade>
 
