@@ -7,6 +7,8 @@ import inventory from '../projects/noteworthy/inventory'
 import mutualFund from '../projects/noteworthy/mutualFund'
 import clock from '../projects/noteworthy/clock'
 import tictactoe from '../projects/noteworthy/TicTacToe'
+import moodify from '../projects/noteworthy/moodify'
+import pwa from '../projects/noteworthy/pwa'
 
 import '../styling/noteworthyProjects.scss'
 
@@ -33,6 +35,29 @@ const NoteworthyProjects = () => {
                <Fade left when={mounted}>
                     <NoteworthyProject
                          hasLiveSite={false}
+                         isFinished={false}
+                         title={pwa.title}
+                         description={pwa.description}
+                         techStack={pwa.techStack}
+                         githubLink={pwa.githubLink}
+                    />
+               </Fade>
+
+               <Fade left when={mounted}>
+                    <NoteworthyProject
+                         hasLiveSite={false}
+                         isFinished={false}
+                         title={moodify.title}
+                         description={moodify.description}
+                         techStack={moodify.techStack}
+                         githubLink={moodify.githubLink}
+                    />
+               </Fade>
+
+               <Fade left when={mounted}>
+                    <NoteworthyProject
+                         hasLiveSite={false}
+                         isFinished={true}
                          title={shopping.title}
                          description={shopping.description}
                          techStack={shopping.techStack}
@@ -43,6 +68,7 @@ const NoteworthyProjects = () => {
                <Fade left when={mounted}>
                     <NoteworthyProject
                          hasLiveSite={false}
+                         isFinished={true}
                          title={inventory.title}
                          description={inventory.description}
                          techStack={inventory.techStack}
@@ -53,6 +79,7 @@ const NoteworthyProjects = () => {
                <Fade left when={mounted}>
                     <NoteworthyProject
                          hasLiveSite={false}
+                         isFinished={true}
                          title={mutualFund.title}
                          description={mutualFund.description}
                          techStack={mutualFund.techStack}
@@ -64,6 +91,7 @@ const NoteworthyProjects = () => {
                <Fade left when={mounted}>
                     <NoteworthyProject
                          hasLiveSite={false}
+                         isFinished={true}
                          title={clock.title}
                          description={clock.description}
                          techStack={clock.techStack}
@@ -74,6 +102,7 @@ const NoteworthyProjects = () => {
                <Fade left when={mounted}>
                     <NoteworthyProject
                          hasLiveSite={false}
+                         isFinished={true}
                          title={tictactoe.title}
                          description={tictactoe.description}
                          techStack={tictactoe.techStack}

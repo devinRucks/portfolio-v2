@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineFolderOpen, AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineFolderOpen, AiOutlineGithub, AiOutlineTool } from "react-icons/ai";
 import { FiExternalLink } from "react-icons/fi"
 import '../styling/noteworthyProject.scss'
 
@@ -8,7 +8,12 @@ const NoteworthyProject = (props) => {
           <div id="noteworthy-project-container">
 
                <section id="project-header">
-                    <AiOutlineFolderOpen color={"#08fdd8"} size={50} />
+                    {props.isFinished &&
+                         <AiOutlineFolderOpen color={"#08fdd8"} size={50} />}
+
+                    {!props.isFinished &&
+                         <AiOutlineTool color={"#08fdd8"} size={50} />
+                    }
                     <div className="links-container">
                          <a target="_blank" rel="noopener noreferrer" href={props.githubLink}>
                               <AiOutlineGithub className="link" color={"#C9C9C9"} size={25} />
