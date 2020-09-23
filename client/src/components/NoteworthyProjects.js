@@ -6,7 +6,7 @@ import shopping from '../projects/noteworthy/shopping'
 import inventory from '../projects/noteworthy/inventory'
 import mutualFund from '../projects/noteworthy/mutualFund'
 import clock from '../projects/noteworthy/clock'
-import snake from '../projects/noteworthy/snake'
+import tictactoe from '../projects/noteworthy/TicTacToe'
 
 import '../styling/noteworthyProjects.scss'
 
@@ -74,10 +74,10 @@ const NoteworthyProjects = () => {
                <Fade left when={mounted}>
                     <NoteworthyProject
                          hasLiveSite={false}
-                         title={snake.title}
-                         description={snake.description}
-                         techStack={snake.techStack}
-                         githubLink={snake.githubLink}
+                         title={tictactoe.title}
+                         description={tictactoe.description}
+                         techStack={tictactoe.techStack}
+                         githubLink={tictactoe.githubLink}
 
                     />
                </Fade>
